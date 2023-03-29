@@ -20,7 +20,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: _book
-          path: _book/
+          path: docs/_book/
   
 # Depends on gh-pages branch and GH_PAT and EMAIL repository secrets
   checkout-and-deploy:
@@ -35,10 +35,10 @@ jobs:
          # Artifact name
          name: _book # optional
          # Destination path
-         path: _book # optional
+         path: docs/_book # optional
      - name: Deploy to GitHub Pages
        uses: Cecilapp/GitHub-Pages-deploy@master
        env:
           EMAIL: ${{ secrets.EMAIL }}               # must be a verified email
           GH_TOKEN: ${{ secrets.GH_PAT }} # https://github.com/settings/tokens
-          BUILD_DIR: _book/                     # "_site/" by default
+          BUILD_DIR: docs/_book/                     # "_site/" by default
