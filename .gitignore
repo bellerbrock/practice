@@ -1,0 +1,8 @@
+
+# don't push local rendered files in master branch
+docs/_book/
+docs/_sections/
+docs/docs/
+# R and Rstudio specific files
+docs/docs.Rproj
+docs/.Rproj.user
