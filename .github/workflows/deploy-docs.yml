@@ -20,8 +20,8 @@ jobs:
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
       - uses: actions/upload-artifact@v1
         with:
-          name: _book
-          path: _book/
+          name: docs/_book
+          path: docs/_book/
   
 # Depends on gh-pages branch and GH_PAT and EMAIL repository secrets
   checkout-and-deploy:
@@ -34,7 +34,7 @@ jobs:
        uses: actions/download-artifact@v1.0.0
        with:
          # Artifact name
-         name: _book # optional
+         name: docs/_book # optional
          # Destination path
          path: docs/_book # optional
      - name: Deploy to GitHub Pages
